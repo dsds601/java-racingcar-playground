@@ -7,19 +7,18 @@ public class Car {
     private static final int FORWARD_NUM = 4;
     private static final int MAX_BOUND = 10;
 
-    private final String name;
+    private final Name name;
     private int position = 0;
+    private Position position2;
 
     public Car(String name) {
-        if(name.trim()==""){
-            throw new IllegalArgumentException("자동차 이름은 값이 존재해야 합니다..");
-        }
-        this.name = name.trim();
+        this.name = new Name(name);
+        this.position2 = new Position(0);
     }
 
     public int getPosition(){return position;}
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 
